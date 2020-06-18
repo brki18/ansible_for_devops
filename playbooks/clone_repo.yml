@@ -1,0 +1,10 @@
+---
+
+- hosts: server1
+  become: yes
+  tasks:
+
+    - name: Clone github repo
+      git:
+        repo: https://github.com/scarolan/ansible-terraform.git
+        dest: /home/centos/clonned_repo

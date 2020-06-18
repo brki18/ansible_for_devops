@@ -1,0 +1,39 @@
+---
+
+- java
+- python
+- shell
+- ruby
+
+
+  employee:
+    name: marko Brkusannin
+    job: Developer
+    skill:
+      - Ansible
+      - Java
+
+  manager:
+    name: Petar Petrovic
+
+    create_key: yes
+    needs_agent: no
+    test: True
+    test2: TRUE
+    test3: false
+
+
+    include_newline: |
+           Ove linije ce da
+            se prikazu ili izvrse
+            kao jedna linija
+
+    fold_newline: >
+              Ovo je u stvari jedna
+              linija, ali je razvucena na
+              nekoliko redova
+
+
+
+
+

@@ -1,0 +1,13 @@
+---
+
+- hosts: server1
+  gather_facts: no
+  become: yes
+  tasks:
+
+    - name: Modify file content
+      lineinfile:
+        dest: "/home/centos/testFile"
+        regexp: "key2="
+        line: "key2=this line is modified by Brki"
+        state: present
