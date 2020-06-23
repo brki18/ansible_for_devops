@@ -1,0 +1,29 @@
+---
+
+- hosts: server1
+  become: yes
+
+  pre_tasks:
+    - name: update yum packages
+      yum:
+        state: latest
+
+  post_tasks:
+    - name: verify httpd is started
+      shell: "systemctl is-active httpd"
+
+    - name: delete directory
+      file:
+        path: "/tmp/brki"
+        state: absent
+
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+
+    - name: create temp folder
+        file:
+          path: "/tmp/brki"
+          state: directory

@@ -1,0 +1,16 @@
+---
+
+- hosts: server1
+  become: yes
+  tasks:
+
+    - name: Add an environment variable
+      lineinfile: dest=/etc/environment regexp=^ENV_VAR= line=TEST=Brki
+
+    - name: Register env variable
+      shell: 'source /etc/environment && echo $TEST'
+      register: env
+
+    - name: print saved env variable
+      debug:
+        msg: "The variable value is {{ env.stdout }}"

@@ -1,0 +1,14 @@
+---
+
+- hosts: server1
+  become: yes
+  vars:
+    var1: Brki
+  vars_files:
+    - vars.yml
+
+  tasks:
+
+    - name: print variables
+      debug:
+        msg: "{{ ansible_facts.python_version }}"

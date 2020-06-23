@@ -1,0 +1,10 @@
+How to define varialbes:
+
+in Inventory:
+test=brki
+
+in a Playbook
+test:brki
+
+As an extra var
+ansible-playbook plabook.yml --extra-vars "test=brki"

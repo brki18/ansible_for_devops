@@ -1,0 +1,17 @@
+---
+
+- hosts: server1
+  become: yes
+  vars:
+    var_proxy:
+      http_proxy: http://web-proxy:80/
+      https_proxy: http://we-proxy:443/
+
+  tasks:
+
+    - name: download file
+      get_url:
+        url: "www.google.com/file.zip"
+        dest: "/home/brki/temp"
+      environment:
+          http_proxy

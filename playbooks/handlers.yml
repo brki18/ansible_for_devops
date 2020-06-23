@@ -1,0 +1,24 @@
+---
+
+- hosts: server1
+  become: yes
+
+  handlers:
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted
+
+    - name: restart memcached
+      service:
+        name: memcached
+        state: restarted
+
+  tasks:
+    - name: Enable Apache rewrite module
+      apache2_module:
+        name: rewrtite
+        state: present
+      notify:
+        - restart apache
+        - restart memcached
