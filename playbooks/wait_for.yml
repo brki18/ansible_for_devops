@@ -1,0 +1,21 @@
+---
+
+- hosts: server1
+  gather_facts: no
+
+  tasks:
+
+    - name: Check current date
+      command: date
+      register: date
+
+    - name: Wait for folder to be created
+      wait_for:
+        path: /tmp/brki1/test
+        search_regex: completed
+      timeout: 60
+      delay: 10
+
+    - name: print the date
+      debug:
+        msg: "{{ date.stdout}}"

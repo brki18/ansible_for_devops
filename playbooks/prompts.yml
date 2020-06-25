@@ -1,0 +1,19 @@
+---
+
+- hosts: 127.0.0.1
+
+  vars_prompt:
+
+    - name: username
+      prompt: "Please enter your username"
+      private: no
+
+    - name: password
+      prompt: "Please enter your password"
+      private: yes
+      confirm: yes
+
+  tasks:
+    - name: Print variables
+      debug:
+        msg: "{{ username }} : {{password }}"

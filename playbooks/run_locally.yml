@@ -1,0 +1,14 @@
+---
+
+- hosts: 127.0.0.1
+  gather_facts: no
+
+  tasks:
+
+    - name: Get date
+      command: date
+      register: date
+
+    - name: Print date
+      debug:
+        msg: "{{ date.stdout }}"

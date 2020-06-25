@@ -1,0 +1,15 @@
+---
+
+- hosts: server1
+  gather_facts: no
+  tasks:
+
+    - name: Use when as a condition
+      command: date
+      register: date
+      ignore_errors: yes
+
+    - name: Print the date
+      failed_when: date1 is not defined
+      debug:
+        msg: "{{ date.stdout }}"
