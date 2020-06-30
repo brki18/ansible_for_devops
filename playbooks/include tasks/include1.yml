@@ -1,0 +1,7 @@
+---
+
+- name: create folder for include1
+  file:
+    path: "/home/centos/{{ folder_name}}"
+    state: directory
+    mode: '0755'

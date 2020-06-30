@@ -1,0 +1,11 @@
+---
+
+#- name: update yum packages
+ # yum: name=* state=latest
+
+- name: Copy local file to remote server
+  copy:
+    src: test.txt
+    dest: /home/centos/test.txt
+    mode: 0755
+  notify: restart apache

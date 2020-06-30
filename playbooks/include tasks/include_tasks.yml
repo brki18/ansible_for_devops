@@ -1,0 +1,23 @@
+---
+
+- hosts: server1
+  become: yes
+  gather_facts: no
+
+  handlers:
+    - include: handlers2.yml
+
+  tasks:
+
+   - name: install apache
+     yum:
+       name: httpd
+       state: present
+     notify: restart apache
+
+   - include: include1.yml
+     vars:
+       folder_name: 'brki_test3'
+
+   #- {include: include2.yml
+       #- include2.yml
