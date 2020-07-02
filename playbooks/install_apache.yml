@@ -1,6 +1,6 @@
 ---
 
-- hosts: server1
+- hosts: mitogen-test01
   become: yes
   tasks:
 

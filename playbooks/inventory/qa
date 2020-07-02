@@ -1,0 +1,8 @@
+[server1]
+16.125.49.241
+
+[server1:vars]
+test123=asdasd
+
+[server2]
+16.125.49.249
