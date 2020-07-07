@@ -1,0 +1,27 @@
+/etc/ssh/sshd_config
+
+
+1. Disable password based SSH authentication
+2. Disable root account remote login
+3. allow/deny SSH for users
+4. Use a non-standard port (22 --> 28999)
+
+
+File permissmions
+
+7: rwx (read/write/execute)
+6: rw- (read/write)
+5: r-x (read/execute)
+4: r-- (read)
+3: -wx (write/execute)
+2: -w- (write)
+1: --x (execute)
+0: --- (no permissions)
+
+In simpler terms, 4 = read, 2 = write and 1 = execute. Therefore read (4) and write (2)
+is 6 in the octal representation, and read (4) and execute (1) is 5.
+
+user/group/everyone
+
+777
+

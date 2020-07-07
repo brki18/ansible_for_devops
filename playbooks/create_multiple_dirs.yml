@@ -14,5 +14,7 @@
       file:
         path: "/home/centos/brki_test"
         state: directory
-        mode: '0755'
+        user: centos
+        group: centos
+        mode: '0750'
       notify: print facts
